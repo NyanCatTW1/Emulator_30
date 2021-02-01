@@ -50,6 +50,7 @@
   <project name="platform/external/wpa_supplicant_8" path="external/wpa_supplicant_8" revision="46e9bac849c82897a2099503f5a8eb0c49b76d29" />
   <project name="platform/external/zlib" path="external/zlib" revision="7656f9eff09cc38244978773777ee64b7b31155d" />
   <project name="platform/frameworks/native" path="frameworks/native" revision="9094ee238458bf1e8a9e8335fd824acc4963d7f4" />
+  
   <project clone-depth="1" name="platform/prebuilts/android-emulator" path="prebuilts/android-emulator" revision="fb26612eb84576adb974fe7f18a49d263072116f" />
   <project clone-depth="1" name="platform/prebuilts/android-emulator-build/archive" path="prebuilts/android-emulator-build/archive" revision="0545d85d4442d77841f8a81ecd2627aff175ce02" />
   <project clone-depth="1" name="platform/prebuilts/android-emulator-build/common" path="prebuilts/android-emulator-build/common" revision="020dcf3d579fd1ec093716788c6bebbbd172bf37" />
@@ -60,6 +61,7 @@
   <project clone-depth="1" name="platform/prebuilts/android-emulator-build/qemu-android-deps" path="prebuilts/android-emulator-build/qemu-android-deps" revision="ef2aabd893875df91b101c255f962c717471a5d4" />
   <project clone-depth="1" name="platform/prebuilts/android-emulator-build/qt" path="prebuilts/android-emulator-build/qt" revision="90231b1b73d5470615f67a416db2d72fa0a5c9d7" />
 
+  <!-- Time to set everything on fire.
   <project clone-depth="1" name="platform/prebuilts/clang/host/darwin-x86" path="prebuilts/clang/host/darwin-x86" revision="3adbcf9e57e3704fdb2f0704c2954f92cddc10d2" />
   <project clone-depth="1" name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" revision="478f9d6d89a8cbeb36273fbecccad45021a51571" />
   <project clone-depth="1" name="platform/prebuilts/clang/host/windows-x86" path="prebuilts/clang/host/windows-x86" revision="1077398d7a4c0d1364568bb0b26e3d84411cda0f" />
@@ -72,6 +74,8 @@
   <project clone-depth="1" name="platform/prebuilts/ninja/windows-x86" path="prebuilts/ninja/windows-x86" revision="b88e85c90e260cfed1d5130499b8dfd7bb9dc02a" />
   <project clone-depth="1" name="platform/prebuilts/qemu-kernel" path="prebuilts/qemu-kernel" revision="16b1921c94720ba66b9eaa6a07dd602165a90a72" />
   <project clone-depth="1" name="platform/prebuilts/tools" path="prebuilts/tools" revision="4b642eff8c0ca3d2bdfd71d68cd6dbbb3b895f06" />
+  -->
+
   <project name="platform/sdk" path="sdk" revision="315fb5b8a73df3f88c79a034968a87b461833a83" />
   <project name="platform/tools/emulator" path="tools/emulator" revision="93a7010407cecb1df00a398b341ca3194e39c05c" />
   <project name="platform/tools/acloud" path="tools/acloud" revision="1ed4e2089896641958efea2cca6a83093f1094ee" />

@@ -1,6 +1,7 @@
 <manifest>
 
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/" />
+  <remote name="nyan" fetch="https://github.com/e666666/" revision="master" />
+  <remote name="aosp" fetch="https://android.googlesource.com/" />
   <default remote="aosp" revision="emu-30-release" sync-j="4" />
 
   <project name="platform/build" path="build" revision="d27974c64a537bb8d62ce16e0ddd848305ca910d" />

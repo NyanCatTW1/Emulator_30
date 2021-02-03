@@ -1,5 +1,4 @@
+emu-30/prebuilts/**/*
+!emu-30/prebuilts/**/Makefile
 wd/
-bin/
-doc/
-share/
 tarballs/

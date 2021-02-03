@@ -10,7 +10,7 @@ mkdir -p out/dist
 
     # Note: --target {windows,linux_aarch64,darwin,darwin_aarch64,linux}
     # android/rebuild.sh
-    android/rebuild.sh --no-tests  # a few obscure test failures
+    android/rebuild.sh --verbose --no-tests  # a few obscure test failures
     # android/rebuild.sh --no-tests --mingw  # obsolete?
     # android/rebuild.sh --no-tests --target=windows  # missing msvc prebuilt
 

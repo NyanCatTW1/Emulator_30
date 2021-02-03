@@ -10,7 +10,8 @@ all:
 	make -C ../downloader/
 	cp -a download.sh wd/
 	docker run -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:downloader /home/android/wd/download.sh
-
+	
+	prebuilts/download.sh
 	docker run -v "$$(pwd)/prebuilts:/home/android/prebuilts" android-rebuilds:emu-$(VERSION) /home/android/prebuilts/build.sh
 
 	cp -a build.sh wd/

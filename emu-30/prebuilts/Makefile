@@ -1,7 +1,7 @@
 .PHONY: all
-SUBDIRS = cmake/linux-x86 gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8
+SUBDIRS = cmake/linux-x86 gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8 ninja/linux-x86 clang/host/linux-x86
 
-all: cmake/linux-x86/bin/cmake gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ld
+all: cmake/linux-x86/bin/cmake gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ld ninja/linux-x86/ninja clang/host/linux-x86/clang-r399163b/bin/clang
 
 clean:
 	for dir in $(SUBDIRS); do \
@@ -19,3 +19,9 @@ cmake/linux-x86/bin/cmake:
 
 gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/bin/x86_64-linux-ld:
 	@$(MAKE) -C gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8
+
+ninja/linux-x86/ninja:
+	@$(MAKE) -C ninja/linux-x86
+
+clang/host/linux-x86/clang-r399163b/bin/clang:
+	@$(MAKE) -C clang/host/linux-x86

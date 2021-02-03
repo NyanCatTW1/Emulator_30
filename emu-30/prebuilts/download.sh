@@ -12,4 +12,10 @@ git fetch origin e75585c30f139dfa2eee4707a60d8d6b9e7f406a
 git checkout e75585c30f139dfa2eee4707a60d8d6b9e7f406a
 popd
 
+git clone --depth 1 https://github.com/martine/ninja.git
+pushd ninja
+git fetch origin 636034b288777c9f0b7aca1072e0496de94db27c
+git checkout 636034b288777c9f0b7aca1072e0496de94db27c
+popd
+
 popd

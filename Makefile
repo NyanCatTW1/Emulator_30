@@ -1,5 +1,1 @@
-.PHONY: all
-VERSION=30
-
-all:
-	cd emu-30 && $(MAKE) all
+emu-30/Makefile

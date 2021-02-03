@@ -1,5 +1,6 @@
 .PHONY: all
 VERSION=30
+ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 all:
 	docker build -t android-rebuilds:emu-$(VERSION) .
@@ -16,3 +17,12 @@ all:
 
 	cp -a build.sh wd/
 	docker run -it -v "$$(pwd)/prebuilts:/home/android/wd/prebuilts" -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:emu-$(VERSION) /home/android/wd/build.sh
+
+clean:
+	cd ${ROOT_DIR} && \
+	rm -rf wd/ && \
+	rm -rf prebuilts/wd/
+
+distclean: clean
+	cd ${ROOT_DIR} && \
+	rm -rf prebuilts/tarballs/

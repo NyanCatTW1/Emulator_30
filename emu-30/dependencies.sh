@@ -15,9 +15,16 @@ apt-get update
 echo 'dash dash/sh boolean false' | debconf-set-selections
 DEBIAN_FRONTEND=noninteractive dpkg-reconfigure --pri=high dash
 
-apt-get install -y python ninja-build git realpath zip make gcc g++ wget curl patch
+apt-get install -y python ninja-build git realpath zip
 # windows
 apt-get install -y libfuse2
 # test suite
 #apt-get install -y libx11-6 libgl1 binutils  # xenial
 apt-get install -y libx11-6 libgl1-mesa-glx binutils
+
+# prebuilts/ uses Makefile
+apt-get install -y make
+# CMake needs gcc/g++ to build (of course)
+apt-get install -y gcc g++
+# x86_64-linux-glibc2.17-4.8 deps
+apt-get install -y wget curl bison flex patch texinfo

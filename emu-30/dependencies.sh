@@ -15,7 +15,7 @@ apt-get update
 echo 'dash dash/sh boolean false' | debconf-set-selections
 DEBIAN_FRONTEND=noninteractive dpkg-reconfigure --pri=high dash
 
-apt-get install -y python ninja-build git realpath zip make gcc g++ wget curl
+apt-get install -y python ninja-build git realpath zip make gcc g++ wget curl patch
 # windows
 apt-get install -y libfuse2
 # test suite

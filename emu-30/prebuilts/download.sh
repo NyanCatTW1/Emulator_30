@@ -8,8 +8,8 @@ wget -c https://github.com/Kitware/CMake/releases/download/v3.10.2/cmake-3.10.2.
 
 git clone --depth 1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8
 pushd x86_64-linux-glibc2.17-4.8
-git fetch origin e75585c30f139dfa2eee4707a60d8d6b9e7f406a
-git checkout e75585c30f139dfa2eee4707a60d8d6b9e7f406a
+git fetch origin 3a954758bbbf155a136ccb528c3fd2431c0d14d2
+git checkout 3a954758bbbf155a136ccb528c3fd2431c0d14d2
 popd
 
 git clone --depth 1 https://github.com/martine/ninja.git

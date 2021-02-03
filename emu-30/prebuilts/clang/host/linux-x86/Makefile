@@ -2,12 +2,16 @@
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 clang-r399163b/bin/clang:
-	echo "Clang build stub"
+	mkdir -p ../../../wd/clang-build
+	cd ../../../wd/clang-build && \
+	cmake -DCMAKE_INSTALL_PREFIX=${ROOT_DIR}/clang-r399163b -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;"	../../tarballs/llvm-project/llvm && \
+	make -j6 && \
+	make install
 
 clean:
-	echo "Clang clean stub"
+	rm -rf clang-r399163b
 
 distclean: clean
-	echo "Clang distclean stub"
+	rm -rf ../../../wd/clang-build
 
 all: clang-r399163b/bin/clang

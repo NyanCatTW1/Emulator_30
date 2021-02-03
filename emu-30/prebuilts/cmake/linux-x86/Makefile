@@ -12,11 +12,9 @@ bin/cmake:
 	make install
 
 clean:
-	cd ${ROOT_DIR} && \
 	rm -rf bin/ doc/ share/
 
 distclean: clean
-	cd $(ROOT_DIR) && \
 	rm -rf ../../wd/cmake-3.10.2 ../../wd/cmake-3.10.2.tar.gz
 
 all: bin/cmake

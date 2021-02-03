@@ -19,10 +19,12 @@ all:
 	docker run -it -v "$$(pwd)/prebuilts:/home/android/wd/prebuilts" -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:emu-$(VERSION) /home/android/wd/build.sh
 
 clean:
+	@${MAKE} -C prebuilts clean
 	cd ${ROOT_DIR} && \
 	rm -rf wd/ && \
 	rm -rf prebuilts/wd/
 
 distclean: clean
+	@${MAKE} -C prebuilts distclean
 	cd ${ROOT_DIR} && \
 	rm -rf prebuilts/tarballs/

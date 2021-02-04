@@ -31,4 +31,4 @@ distclean: clean
   rm -rf prebuilts/wd/
 
 clean-tarballs:
-	rm -rf tarballs/
+	rm -rf prebuilts/tarballs/

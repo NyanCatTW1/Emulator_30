@@ -10,7 +10,7 @@ bin/gcc:
 	make install
 
 clean:
-	echo "GCC 5 clean stub"
+	rm -rf bin/ include/ lib/ lib64/ libexec/ share/
 
 distclean: clean
 	rm -rf ../wd/gcc-5-build

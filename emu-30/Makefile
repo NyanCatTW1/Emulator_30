@@ -15,6 +15,10 @@ all:
 	prebuilts/download.sh
 	docker run -v "$$(pwd)/prebuilts:/home/android/prebuilts" android-rebuilds:emu-$(VERSION) /home/android/prebuilts/build.sh
 
+	if patch -p0 -N --dry-run --silent < Clang-use-GCC5-libs.patch 2>/dev/null; then \
+		patch -p0 -N < Clang-use-GCC5-libs.patch; \
+	fi;
+
 	cp -a build.sh wd/
 	docker run -it -v "$$(pwd)/prebuilts:/home/android/wd/prebuilts" -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:emu-$(VERSION) /home/android/wd/build.sh
 

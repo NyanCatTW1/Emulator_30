@@ -1,0 +1,11 @@
+--- wd/external/qemu/android/scripts/unix/gen-android-sdk-toolchain.sh.orig	2021-02-04 21:50:52.828113540 +0800
++++ wd/external/qemu/android/scripts/unix/gen-android-sdk-toolchain.sh	2021-02-04 21:54:41.478233163 +0800
+@@ -355,7 +355,7 @@
+ # Environment setup
+ $EXTRA_ENV_SETUP
+ # Tool invocation.
+-${DST_PREFIX}$DST_PROG $FLAGS "\$@" $POST_FLAGS
++LD_LIBRARY_PATH="/home/android/wd/prebuilts/gcc-5/lib64:\$LD_LIBRARY_PATH" ${DST_PREFIX}$DST_PROG $FLAGS "\$@" $POST_FLAGS
+ 
+ EOF
+         chmod +x "$DST_FILE"

@@ -21,7 +21,7 @@ popd
 
 wget -c https://ftp.gnu.org/gnu/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz
 tar xvfk gcc-5.5.0.tar.xz
-mv gcc-5.5.0 gcc-5
+ln -sfv gcc-5.5.0 gcc-5
 
 git clone --depth 1 https://android.googlesource.com/toolchain/llvm-project
 pushd llvm-project

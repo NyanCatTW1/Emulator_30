@@ -28,3 +28,5 @@ apt-get install -y make
 apt-get install -y gcc g++
 # x86_64-linux-glibc2.17-4.8 deps
 apt-get install -y wget curl bison flex patch texinfo
+# GCC 5.1.0 deps
+apt-get install -y libgmp-dev libmpfr-dev libmpc-dev

@@ -19,8 +19,9 @@ git fetch origin 636034b288777c9f0b7aca1072e0496de94db27c
 git checkout 636034b288777c9f0b7aca1072e0496de94db27c
 popd
 
-wget -c https://ftp.gnu.org/gnu/gcc/gcc-5.1.0/gcc-5.1.0.tar.bz2
-tar xvfk gcc-5.1.0.tar.bz2
+wget -c https://ftp.gnu.org/gnu/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz
+tar xvfk gcc-5.5.0.tar.xz
+mv gcc-5.5.0 gcc-5
 
 git clone --depth 1 https://android.googlesource.com/toolchain/llvm-project
 pushd llvm-project

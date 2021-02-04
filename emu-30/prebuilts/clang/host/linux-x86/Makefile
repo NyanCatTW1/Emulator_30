@@ -1,6 +1,6 @@
 .PHONY: all
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-GCC_DIR:=${ROOT_DIR}/../../../gcc-5.1.0
+GCC_DIR:=${ROOT_DIR}/../../../gcc-5
 
 clang-r399163b/bin/clang:
 	mkdir -p ../../../wd/clang-build

@@ -15,6 +15,6 @@ clean:
 	rm -rf bin/ doc/ share/
 
 distclean: clean
-	rm -rf ../../wd/cmake-3.10.2 ../../wd/cmake-3.10.2.tar.gz
+	rm -rf ../../wd/cmake-3.10.2
 
 all: bin/cmake

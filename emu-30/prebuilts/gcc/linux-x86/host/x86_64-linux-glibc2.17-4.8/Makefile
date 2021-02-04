@@ -11,9 +11,8 @@ bin/x86_64-linux-ld:
 
 clean:
 	rm -rf bin build-raring-multilib-toolchain.sh build-with-previous-gcc.sh include lib libexec PACKAGE_SOURCES sysroot sysroot-patches toolchain-patches TOOLCHAIN_SOURCES x86_64-linux
-	rm -rf ../../../../wd/x86_64-linux-glibc2.17-4.8
 
 distclean: clean
-	rm -rf ../../../../tarballs/x86_64-linux-glibc2.17-4.8
+	rm -rf ../../../../wd/x86_64-linux-glibc2.17-4.8
 
 all: bin/x86_64-linux-ld

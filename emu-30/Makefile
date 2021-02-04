@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: all clean distclean clean-tarballs
 VERSION=30
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -20,11 +20,11 @@ all:
 
 clean:
 	@${MAKE} -C prebuilts clean
-	cd ${ROOT_DIR} && \
-	rm -rf wd/ && \
-	rm -rf prebuilts/wd/
 
 distclean: clean
 	@${MAKE} -C prebuilts distclean
-	cd ${ROOT_DIR} && \
-	rm -rf prebuilts/tarballs/
+	rm -rf wd/ && \
+  rm -rf prebuilts/wd/
+
+clean-tarballs:
+	rm -rf tarballs/

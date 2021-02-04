@@ -13,9 +13,7 @@ all:
 	docker run -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:downloader /home/android/wd/download.sh
 	
 	prebuilts/download.sh
-	docker run -v "$$(pwd)/prebuilts:/home/android/prebuilts" android-rebuilds:emu-$(VERSION) /home/android/prebuilts/docker-build.sh
-	cd prebuilts && \
-	make host
+	docker run -v "$$(pwd)/prebuilts:/home/android/prebuilts" android-rebuilds:emu-$(VERSION) /home/android/prebuilts/build.sh
 
 	cp -a build.sh wd/
 	docker run -it -v "$$(pwd)/prebuilts:/home/android/wd/prebuilts" -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:emu-$(VERSION) /home/android/wd/build.sh

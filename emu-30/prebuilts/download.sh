@@ -35,4 +35,9 @@ tar xvfk glib-2.38.2.tar.xz 2>/dev/null
 wget -c http://cairographics.org/releases/pixman-0.34.0.tar.gz
 tar xvfk pixman-0.34.0.tar.gz 2>/dev/null
 
+cp -av ../../wd/external/virglrenderer .
+pushd virglrenderer
+./autogen.sh
+popd
+
 popd

@@ -4,7 +4,7 @@ ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 lib/libglib-2.0.a:
 	mkdir -p ../../../wd/glib-build
 	cd ../../../wd/glib-build && \
-	../../tarballs/glib-2.38.2/configure --prefix=$(ROOT_DIR) && \
+	../../tarballs/glib-2.38.2/configure --prefix=$(ROOT_DIR) --disable-shared && \
 	make -j6 && \
 	make install
 

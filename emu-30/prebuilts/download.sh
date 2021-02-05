@@ -29,4 +29,7 @@ git fetch origin 87f1315dfbea7c137aa2e6d362dbb457e388158d
 git checkout 87f1315dfbea7c137aa2e6d362dbb457e388158d
 popd
 
+wget -c https://download.gnome.org/sources/glib/2.38/glib-2.38.2.tar.xz
+tar xvfk glib-2.38.2.tar.xz 2>/dev/null
+
 popd

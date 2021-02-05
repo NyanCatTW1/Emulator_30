@@ -9,7 +9,7 @@ clang-r399163b/bin/clang:
 	-DCMAKE_INSTALL_PREFIX=${ROOT_DIR}/clang-r399163b \
 	-G "Unix Makefiles" \
 	-DCMAKE_BUILD_TYPE=Release \
-	-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;" \
+	-DLLVM_ENABLE_PROJECTS="libcxx;libcxxabi;clang;clang-tools-extra;" \
 	-DCMAKE_C_COMPILER="${GCC_DIR}/bin/gcc" \
 	-DCMAKE_CXX_COMPILER="${GCC_DIR}/bin/g++" \
 	-DCMAKE_CXX_LINK_FLAGS="-Wl,-rpath,${GCC_DIR}/lib64 -L${GCC_DIR}/toolchains/lib64" \

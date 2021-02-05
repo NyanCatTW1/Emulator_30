@@ -5,7 +5,7 @@
  $EXTRA_ENV_SETUP
  # Tool invocation.
 -${DST_PREFIX}$DST_PROG $FLAGS "\$@" $POST_FLAGS
-+LD_LIBRARY_PATH="/home/android/wd/prebuilts/gcc-5/lib64:\$LD_LIBRARY_PATH" ${DST_PREFIX}$DST_PROG $FLAGS "\$@" $POST_FLAGS
++LD_LIBRARY_PATH="/home/android/wd/prebuilts/gcc-5/lib64:$LD_LIBRARY_PATH" LIBRARY_PATH="/home/android/wd/prebuilts/clang/host/linux-x86/clang-r399163b/lib:$LIBRARY_PATH" ${DST_PREFIX}$DST_PROG $FLAGS "\$@" $POST_FLAGS
  
  EOF
          chmod +x "$DST_FILE"

@@ -32,4 +32,7 @@ popd
 wget -c https://download.gnome.org/sources/glib/2.38/glib-2.38.2.tar.xz
 tar xvfk glib-2.38.2.tar.xz 2>/dev/null
 
+wget -c http://cairographics.org/releases/pixman-0.32.4.tar.gz
+tar xvfk pixman-0.32.4.tar.gz 2>/dev/null
+
 popd

@@ -8,10 +8,17 @@ lib/libglib-2.0.a:
 	make -j6 && \
 	make install
 
+lib/libpixman-1.a:
+	mkdir -p ../../../wd/pixman-build
+	cd ../../../wd/pixman-build && \
+	../../tarballs/pixman-0.32.4/configure --prefix=$(ROOT_DIR) && \
+	make -j6 && \
+	make install
+
 clean:
-	echo "QEMU deps clean stub"
+	rm -rf bin/ include/ lib/ share/
 
 distclean: clean
-	echo "QEMU deps distclean stub"
+	rm -rf ../../../wd/{glib,pixman}-build
 
-all: lib/libglib-2.0.a
+all: lib/libglib-2.0.a lib/libpixman-1.a

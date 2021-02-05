@@ -11,7 +11,7 @@ lib/libglib-2.0.a:
 lib/libpixman-1.a:
 	mkdir -p ../../../wd/pixman-build
 	cd ../../../wd/pixman-build && \
-	../../tarballs/pixman-0.32.4/configure --prefix=$(ROOT_DIR) && \
+	../../tarballs/pixman-0.34.0/configure --prefix=$(ROOT_DIR) && \
 	make -j6 && \
 	make install
 

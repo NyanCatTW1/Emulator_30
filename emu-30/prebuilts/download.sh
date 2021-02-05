@@ -5,7 +5,7 @@ mkdir -p tarballs
 pushd tarballs
 
 wget -c https://github.com/Kitware/CMake/releases/download/v3.10.2/cmake-3.10.2.tar.gz
-tar xvfk cmake-3.10.2.tar.gz
+tar xvfk cmake-3.10.2.tar.gz 2>/dev/null
 
 git clone --depth 1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8
 pushd x86_64-linux-glibc2.17-4.8
@@ -20,7 +20,7 @@ git checkout 636034b288777c9f0b7aca1072e0496de94db27c
 popd
 
 wget -c https://ftp.gnu.org/gnu/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz
-tar xvfk gcc-5.5.0.tar.xz
+tar xvfk gcc-5.5.0.tar.xz 2>/dev/null
 ln -sfv gcc-5.5.0 gcc-5
 
 git clone --depth 1 https://android.googlesource.com/toolchain/llvm-project

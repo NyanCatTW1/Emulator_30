@@ -32,5 +32,3 @@ apt-get install -y wget curl bison flex patch texinfo
 apt-get install -y libgmp-dev libmpfr-dev libmpc-dev
 # QEMU dep -> GLib 2.38.2 deps
 apt-get install -y zlib1g-dev libffi-dev pkg-config gettext
-# VirGLRenderer deps
-apt-get install -y libepoxy-dev

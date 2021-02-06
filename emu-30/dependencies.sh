@@ -36,3 +36,5 @@ apt-get install -y zlib1g-dev libffi-dev pkg-config gettext
 apt-get install -y libegl1-mesa-dev
 # VirGLRenderer -> libgbm(Mesa) deps
 apt-get install -y libpthread-stubs0-dev libexpat1-dev libdrm-dev
+# Libvpx deps
+apt-get install -y nasm yasm

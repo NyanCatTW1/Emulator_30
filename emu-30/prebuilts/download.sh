@@ -73,4 +73,9 @@ if [ ! -d mesa-17.0.7 ]; then
   tar xvfk mesa-17.0.7.tar.xz 2>/dev/null
 fi
 
+if [ ! -d gperftools-2.7 ]; then
+  wget -c https://github.com/gperftools/gperftools/releases/download/gperftools-2.7/gperftools-2.7.tar.gz
+  tar xvfk gperftools-2.7.tar.gz 2>/dev/null
+fi
+
 popd

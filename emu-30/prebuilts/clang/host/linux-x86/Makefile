@@ -17,10 +17,13 @@ clang-r399163b/bin/clang:
 	make -j6 && \
 	make install
 
+clang-r399163b/lib64/libc++.so: clang-r399163b/bin/clang
+	ln -sv lib clang-r399163b/lib64
+
 clean:
 	rm -rf clang-r399163b
 
 distclean: clean
 	rm -rf ../../../wd/clang-build
 
-all: clang-r399163b/bin/clang
+all: clang-r399163b/bin/clang clang-r399163b/lib64/libc++.so

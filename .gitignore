@@ -5,10 +5,12 @@ tarballs/
 # Common prebuild artifacts
 bin/
 doc/
+etc/
 include/
 lib/
 lib64/
 libexec/
+sbin/
 share/
 
 # Ninja artifact

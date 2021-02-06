@@ -78,4 +78,9 @@ if [ ! -d gperftools-2.7 ]; then
   tar xvfk gperftools-2.7.tar.gz 2>/dev/null
 fi
 
+if [ ! -d e2fsprogs-1.42.13 ]; then
+  wget -c http://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.42.13/e2fsprogs-1.42.13.tar.gz
+  tar xvfk e2fsprogs-1.42.13.tar.gz 2>/dev/null
+fi
+
 popd

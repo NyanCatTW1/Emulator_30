@@ -83,4 +83,9 @@ if [ ! -d e2fsprogs-1.42.13 ]; then
   tar xvfk e2fsprogs-1.42.13.tar.gz 2>/dev/null
 fi
 
+if [ ! -d libunwind-1.3.1 ]; then
+  wget -c https://github.com/libunwind/libunwind/releases/download/v1.3.1/libunwind-1.3.1.tar.gz
+  tar xvfk libunwind-1.3.1.tar.gz 2>/dev/null
+fi
+
 popd

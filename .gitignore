@@ -1,3 +1,19 @@
-emu-30/prebuilts/**
+# Common dir
 wd/
 tarballs/
+
+# Common prebuild artifacts
+bin/
+doc/
+include/
+lib/
+lib64/
+libexec/
+share/
+
+# Ninja artifact
+ninja
+
+# Special treats for x86_64-linux-glibc2.17-4.8
+emu-30/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/*
+!emu-30/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/Makefile

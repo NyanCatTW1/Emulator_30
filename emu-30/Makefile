@@ -13,7 +13,7 @@ all:
 	docker run -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:downloader /home/android/wd/download.sh
 	
 	prebuilts/download.sh
-	docker run -v "$$(pwd)/prebuilts:/home/android/prebuilts" android-rebuilds:emu-$(VERSION) /home/android/prebuilts/build.sh
+	docker run -v "$$(pwd)/prebuilts:/home/android/wd/prebuilts" android-rebuilds:emu-$(VERSION) /home/android/wd/prebuilts/build.sh
 
 	if patch -p0 -N --dry-run --silent < Clang-libPath-fix.patch 2>/dev/null; then \
 		patch -p0 -N < Clang-libPath-fix.patch; \

@@ -4,40 +4,61 @@ cd $DIR
 mkdir -p tarballs
 pushd tarballs
 
-wget -c https://github.com/Kitware/CMake/releases/download/v3.10.2/cmake-3.10.2.tar.gz
-tar xvfk cmake-3.10.2.tar.gz 2>/dev/null
+if [ ! -d cmake-3.10.2 ]; then
+  wget -c https://github.com/Kitware/CMake/releases/download/v3.10.2/cmake-3.10.2.tar.gz
+  tar xvfk cmake-3.10.2.tar.gz 2>/dev/null
+fi
 
-git clone --depth 1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8
-pushd x86_64-linux-glibc2.17-4.8
-git fetch origin 3a954758bbbf155a136ccb528c3fd2431c0d14d2
-git checkout 3a954758bbbf155a136ccb528c3fd2431c0d14d2
-popd
+if [ ! -d x86_64-linux-glibc2.17-4.8 ]; then
+  git clone --depth 1 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8
+  pushd x86_64-linux-glibc2.17-4.8
+  git fetch origin 3a954758bbbf155a136ccb528c3fd2431c0d14d2
+  git checkout 3a954758bbbf155a136ccb528c3fd2431c0d14d2
+  popd
+fi
 
-git clone --depth 1 https://github.com/martine/ninja.git
-pushd ninja
-git fetch origin 636034b288777c9f0b7aca1072e0496de94db27c
-git checkout 636034b288777c9f0b7aca1072e0496de94db27c
-popd
+if [ ! -d ninja ]; then
+  git clone --depth 1 https://github.com/martine/ninja.git
+  pushd ninja
+  git fetch origin 636034b288777c9f0b7aca1072e0496de94db27c
+  git checkout 636034b288777c9f0b7aca1072e0496de94db27c
+  popd
+fi
 
-wget -c https://ftp.gnu.org/gnu/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz
-tar xvfk gcc-5.5.0.tar.xz 2>/dev/null
-ln -sfv gcc-5.5.0 gcc-5
+if [ ! -d gcc-5.5.0 ]; then
+  wget -c https://ftp.gnu.org/gnu/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz
+  tar xvfk gcc-5.5.0.tar.xz 2>/dev/null
+  ln -sfv gcc-5.5.0 gcc-5
+fi
 
-git clone --depth 1 https://android.googlesource.com/toolchain/llvm-project
-pushd llvm-project
-git fetch origin 87f1315dfbea7c137aa2e6d362dbb457e388158d
-git checkout 87f1315dfbea7c137aa2e6d362dbb457e388158d
-popd
+if [ ! -d llvm-project ]; then
+  git clone --depth 1 https://android.googlesource.com/toolchain/llvm-project
+  pushd llvm-project
+  git fetch origin 87f1315dfbea7c137aa2e6d362dbb457e388158d
+  git checkout 87f1315dfbea7c137aa2e6d362dbb457e388158d
+  popd
+fi
 
-wget -c https://download.gnome.org/sources/glib/2.38/glib-2.38.2.tar.xz
-tar xvfk glib-2.38.2.tar.xz 2>/dev/null
+if [ ! -d glib-2.38.2 ]; then
+  wget -c https://download.gnome.org/sources/glib/2.38/glib-2.38.2.tar.xz
+  tar xvfk glib-2.38.2.tar.xz 2>/dev/null
+fi
 
-wget -c http://cairographics.org/releases/pixman-0.34.0.tar.gz
-tar xvfk pixman-0.34.0.tar.gz 2>/dev/null
+if [ ! -d pixman-0.34.0 ]; then
+  wget -c http://cairographics.org/releases/pixman-0.34.0.tar.gz
+  tar xvfk pixman-0.34.0.tar.gz 2>/dev/null
+fi
 
-cp -av ../../wd/external/virglrenderer .
-pushd virglrenderer
-./autogen.sh
-popd
+if [ ! -d libepoxy-1.5.4 ]; then
+  wget -c https://github.com/anholt/libepoxy/releases/download/1.5.4/libepoxy-1.5.4.tar.xz
+  tar xvfk libepoxy-1.5.4.tar.xz 2>/dev/null
+fi
+
+if [ ! -d virglrenderer ]; then
+  cp -av ../../wd/external/virglrenderer .
+  pushd virglrenderer
+  ./autogen.sh
+  popd
+fi
 
 popd

@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: all clean distclean
 VERSION=30
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 

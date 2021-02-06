@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: all clean distclean
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 GCC_DIR:=${ROOT_DIR}/../../../gcc-5
 

@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: all clean distclean
 SUBDIRS = \
 					cmake/linux-x86 \
 					gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8 \

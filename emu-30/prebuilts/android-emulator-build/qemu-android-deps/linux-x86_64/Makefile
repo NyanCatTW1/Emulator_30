@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: all clean distclean
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 lib/libglib-2.0.a:

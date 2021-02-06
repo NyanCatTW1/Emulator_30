@@ -88,4 +88,9 @@ if [ ! -d libunwind-1.3.1 ]; then
   tar xvfk libunwind-1.3.1.tar.gz 2>/dev/null
 fi
 
+if [ ! -d libxml2-2.9.2 ]; then
+  wget -c http://xmlsoft.org/sources/libxml2-2.9.2.tar.gz
+  tar xvfk libxml2-2.9.2.tar.gz 2>/dev/null
+fi
+
 popd

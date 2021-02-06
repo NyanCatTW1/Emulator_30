@@ -5,7 +5,7 @@ ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 bin/gcc:
 	mkdir -p ../wd/gcc-5-build
 	cd ../wd/gcc-5-build && \
-	../../tarballs/gcc-5/configure --prefix=${ROOT_DIR} --disable-multilib --enable-languages=c,c++ && \
+	../../tarballs/gcc-5/configure --prefix=${ROOT_DIR} --disable-multilib --enable-languages=c,c++ --disable-bootstrap && \
 	make -j6 && \
 	make install
 

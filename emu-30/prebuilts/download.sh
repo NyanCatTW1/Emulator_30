@@ -106,4 +106,9 @@ if [ ! -d x264 ]; then
   popd
 fi
 
+if [ ! -d ffmpeg-3.4.8 ]; then
+  wget -c https://ffmpeg.org/releases/ffmpeg-3.4.8.tar.xz
+  tar xvfk ffmpeg-3.4.8.tar.xz
+fi
+
 popd

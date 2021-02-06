@@ -1,4 +1,4 @@
-.PHONY: all clean distclean
+.PHONY: all clean distclean qtwebengine-deps
 SUBDIRS = \
 					cmake/linux-x86 \
 					gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8 \
@@ -15,7 +15,9 @@ SUBDIRS = \
 					android-emulator-build/common/libvpx/linux-x86_64 \
 					android-emulator-build/common/x264/linux-x86_64 \
 					android-emulator-build/common/ffmpeg/linux-x86_64 \
-					android-emulator-build/qt/linux-x86_64-nowebengine
+					android-emulator-build/qt/linux-x86_64-nowebengine \
+					android-emulator-build/common/qtwebengine-deps/linux-x86_64 \
+					patchelf
 
 all: \
 	cmake/linux-x86/bin/cmake \
@@ -37,7 +39,9 @@ all: \
 	android-emulator-build/common/libvpx/linux-x86_64/lib/libvpx.a \
 	android-emulator-build/common/x264/linux-x86_64/lib/libx264.a \
 	android-emulator-build/common/ffmpeg/linux-x86_64/lib/libavcodec.a \
-	android-emulator-build/qt/linux-x86_64-nowebengine/lib/libQt5CoreAndroidEmu.so
+	android-emulator-build/qt/linux-x86_64-nowebengine/lib/libQt5CoreAndroidEmu.so \
+	patchelf/bin/patchelf \
+	qtwebengine-deps
 
 clean:
 	for dir in $(SUBDIRS); do \
@@ -107,5 +111,11 @@ android-emulator-build/common/x264/linux-x86_64/lib/libx264.a:
 android-emulator-build/common/ffmpeg/linux-x86_64/lib/libavcodec.a:
 	@$(MAKE) -C android-emulator-build/common/ffmpeg/linux-x86_64
 
-android-emulator-build/qt/linux-x86_64-nowebengine/lib/libQt5CoreAndroidEmu.so: clang/host/linux-x86/clang-r399163b/bin/clang clang/host/linux-x86/clang-r399163b/lib64/libc++.so
+android-emulator-build/qt/linux-x86_64-nowebengine/lib/libQt5CoreAndroidEmu.so: qtwebengine-deps
 	@$(MAKE) -C android-emulator-build/qt/linux-x86_64-nowebengine
+
+patchelf/bin/patchelf:
+	@$(MAKE) -C patchelf
+
+qtwebengine-deps: clang/host/linux-x86/clang-r399163b/bin/clang clang/host/linux-x86/clang-r399163b/lib64/libc++.so patchelf/bin/patchelf
+	@$(MAKE) -C android-emulator-build/common/qtwebengine-deps/linux-x86_64

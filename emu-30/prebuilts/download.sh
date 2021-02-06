@@ -116,4 +116,24 @@ if [ ! -d qt-everywhere-src-5.12.1 ]; then
   tar xvfk qt-everywhere-src-5.12.1.tar.xz
 fi
 
+if [ ! -d libxkbcommon-0.8.2 ]; then
+  wget -c https://xkbcommon.org/download/libxkbcommon-0.8.2.tar.xz
+  tar xvfk libxkbcommon-0.8.2.tar.xz
+fi
+
+if [ ! -d libxcb-1.12 ]; then
+  wget -c https://xcb.freedesktop.org/dist/libxcb-1.12.tar.gz
+  tar xvfk libxcb-1.12.tar.gz
+fi
+
+if [ ! -d xcb-proto-1.12 ]; then
+  wget -c https://xcb.freedesktop.org/dist/xcb-proto-1.12.tar.gz
+  tar xvfk xcb-proto-1.12.tar.gz
+fi
+
+if [ ! -d patchelf-0.12.20200827.8d3a16e ]; then
+  wget -c https://github.com/NixOS/patchelf/releases/download/0.12/patchelf-0.12.tar.bz2
+  tar xvfk patchelf-0.12.tar.bz2
+fi
+
 popd

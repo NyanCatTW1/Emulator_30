@@ -98,4 +98,12 @@ if [ ! -d libvpx-1.8.0 ]; then
   tar xvfk libvpx-1.8.0.tar.gz
 fi
 
+if [ ! -d x264 ]; then
+  git clone --depth 1 https://code.videolan.org/videolan/x264.git
+  pushd x264
+    git fetch origin aaa9aa83a111ed6f1db253d5afa91c5fc844583f
+    git checkout aaa9aa83a111ed6f1db253d5afa91c5fc844583f
+  popd
+fi
+
 popd

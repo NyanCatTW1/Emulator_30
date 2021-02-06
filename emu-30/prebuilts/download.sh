@@ -52,6 +52,10 @@ fi
 if [ ! -d libepoxy-1.5.4 ]; then
   wget -c https://github.com/anholt/libepoxy/releases/download/1.5.4/libepoxy-1.5.4.tar.xz
   tar xvfk libepoxy-1.5.4.tar.xz 2>/dev/null
+  pushd libepoxy-1.5.4
+  mkdir -p m4
+  autoreconf -fiv --install
+  popd
 fi
 
 if [ ! -d virglrenderer ]; then
@@ -59,6 +63,11 @@ if [ ! -d virglrenderer ]; then
   pushd virglrenderer
   ./autogen.sh
   popd
+fi
+
+if [ ! -d mesa-17.0.7 ]; then
+  wget -c https://archive.mesa3d.org/older-versions/17.x/mesa-17.0.7.tar.xz
+  tar xvfk mesa-17.0.7.tar.xz 2>/dev/null
 fi
 
 popd

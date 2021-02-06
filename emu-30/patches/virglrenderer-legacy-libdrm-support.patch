@@ -1,0 +1,14 @@
+diff -x .git -ruN ../../wd/external/virglrenderer/src/virgl_gbm.c virglrenderer/src/virgl_gbm.c
+--- ../../wd/external/virglrenderer/src/virgl_gbm.c	2021-02-06 10:46:01.758758370 +0800
++++ virglrenderer/src/virgl_gbm.c	2021-02-06 13:01:32.370671630 +0800
+@@ -453,6 +453,10 @@
+ }
+ #endif
+ 
++#ifndef DRM_RDWR
++#define DRM_RDWR O_RDWR
++#endif
++
+ int virgl_gbm_export_fd(struct gbm_device *gbm, uint32_t handle, int32_t *out_fd)
+ {
+    int ret;

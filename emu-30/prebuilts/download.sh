@@ -62,6 +62,9 @@ if [ ! -d virglrenderer ]; then
   cp -av ../../wd/external/virglrenderer .
   pushd virglrenderer
   ./autogen.sh
+  if patch -p1 -N --dry-run --silent < ../../../patches/virglrenderer-legacy-libdrm-support.patch 2>/dev/null; then \
+                patch -p1 -N < ../../../patches/virglrenderer-legacy-libdrm-support.patch; \
+  fi;
   popd
 fi
 

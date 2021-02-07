@@ -9,7 +9,7 @@ lib/libtcmalloc_minimal.so:
 	make install
 
 clean:
-	rm -rf include/ lib/
+	rm -rf bin/ include/ lib/ share/
 
 distclean: clean
 	rm -rf ../../../../wd/tcmalloc-build

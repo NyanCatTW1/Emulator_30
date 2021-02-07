@@ -9,7 +9,7 @@ lib/libvirglrenderer.a:
 	make install
 
 clean:
-	rm -rf include/ lib/
+	rm -rf bin/ include/ lib/
 
 distclean: clean
 	rm -rf ../../../../wd/virgl-build

@@ -17,7 +17,7 @@ include/gbm.h:
 	cp ../tarballs/mesa-17.0.7/src/gbm/main/gbm.h include
 
 clean:
-	rm -f lib/ include/
+	rm -rf lib/ include/
 
 distclean: clean
 	rm -rf ../../wd/libgbm-build

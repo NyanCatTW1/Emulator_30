@@ -3,12 +3,12 @@ MAINTAINER Sylvain Beucler <beuc@beuc.net>
 COPY dependencies.sh /usr/src/dependencies.sh
 RUN /usr/src/dependencies.sh
 
-RUN useradd android -m -s /bin/bash
-USER android
-RUN mkdir /home/android/wd/
-WORKDIR /home/android/wd/
+RUN useradd builder -m -s /bin/bash
+USER builder
+RUN mkdir /home/builder/wd/
+WORKDIR /home/builder/wd/
 
-COPY repo.sh /home/android/repo.sh
-RUN /home/android/repo.sh
+COPY repo.sh /home/builder/repo.sh
+RUN /home/builder/repo.sh
 
 CMD /bin/bash

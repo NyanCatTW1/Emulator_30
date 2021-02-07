@@ -10,17 +10,17 @@ all:
 
 	make -C ../downloader/
 	cp -a download.sh wd/
-	docker run -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:downloader /home/android/wd/download.sh
+	docker run -v "$$(pwd)/wd:/home/builder/wd" android-rebuilds:downloader /home/builder/wd/download.sh
 	
 	prebuilts/download.sh
-	docker run -v "$$(pwd)/prebuilts:/home/android/wd/prebuilts" android-rebuilds:emu-$(VERSION) /home/android/wd/prebuilts/build.sh
+	docker run -v "$$(pwd)/prebuilts:/home/builder/wd/prebuilts" android-rebuilds:emu-$(VERSION) /home/builder/wd/prebuilts/build.sh
 
 	if patch -p0 -N --dry-run --silent < patches/Clang-libPath-fix.patch 2>/dev/null; then \
 		patch -p0 -N < patches/Clang-libPath-fix.patch; \
 	fi;
 
 	cp -a build.sh wd/
-	docker run -it -v "$$(pwd)/prebuilts:/home/android/wd/prebuilts" -v "$$(pwd)/wd:/home/android/wd" android-rebuilds:emu-$(VERSION) /home/android/wd/build.sh
+	docker run -it -v "$$(pwd)/prebuilts:/home/builder/wd/prebuilts" -v "$$(pwd)/wd:/home/builder/wd" android-rebuilds:emu-$(VERSION) /home/builder/wd/build.sh
 
 clean:
 	@${MAKE} -C prebuilts clean

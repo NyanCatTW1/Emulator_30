@@ -10,14 +10,14 @@ qtwebengine-deps: \
 lib/libxkbcommon.so: lib/libxcb.so
 	mkdir -p ../../../../wd/qtwebengine-deps/libxkbcommon-build
 	cd ../../../../wd/qtwebengine-deps/libxkbcommon-build && \
-	PKG_CONFIG_PATH="/home/android/wd/prebuilts/android-emulator-build/common/qtwebengine-deps/linux-x86_64/lib/pkgconfig" ../../../tarballs/libxkbcommon-0.8.2/configure --prefix=${ROOT_DIR} && \
+	PKG_CONFIG_PATH="/home/builder/wd/prebuilts/android-emulator-build/common/qtwebengine-deps/linux-x86_64/lib/pkgconfig" ../../../tarballs/libxkbcommon-0.8.2/configure --prefix=${ROOT_DIR} && \
 	make -j6 && \
 	make install
 
 lib/libxcb.so: share/xcb/damage.xml
 	mkdir -p ../../../../wd/qtwebengine-deps/libxcb-build
 	cd ../../../../wd/qtwebengine-deps/libxcb-build && \
-	PKG_CONFIG_PATH="/home/android/wd/prebuilts/android-emulator-build/common/qtwebengine-deps/linux-x86_64/lib/pkgconfig" ../../../tarballs/libxcb-1.12/configure --prefix=${ROOT_DIR} && \
+	PKG_CONFIG_PATH="/home/builder/wd/prebuilts/android-emulator-build/common/qtwebengine-deps/linux-x86_64/lib/pkgconfig" ../../../tarballs/libxcb-1.12/configure --prefix=${ROOT_DIR} && \
   make -j6 && \
   make install
 

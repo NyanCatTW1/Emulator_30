@@ -15,7 +15,7 @@ mkdir -p out/dist
     # android/rebuild.sh --no-tests --target=windows  # missing msvc prebuilt
 
     # Note: testsuite was ran this way
-    # android/scripts/unix/run_tests.sh --out-dir=/home/android/wd/external/qemu/objs --verbose --verbose -j 4 in /home/android/wd/external/qemu/objs
+    # android/scripts/unix/run_tests.sh --out-dir=/home/builder/wd/external/qemu/objs --verbose --verbose -j 4 in /home/builder/wd/external/qemu/objs
 
     # TODO: Qt libs are from prebuilts, need to be rebuilt
 

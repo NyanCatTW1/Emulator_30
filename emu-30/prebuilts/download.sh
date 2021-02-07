@@ -112,7 +112,7 @@ if [ ! -d ffmpeg-3.4.8 ]; then
 fi
 
 if [ ! -d qt-everywhere-src-5.12.1 ]; then
-  wget -c http://download.qt.io/archive/qt/5.12/5.12.1/single/qt-everywhere-src-5.12.1.tar.xz
+  wget -c https://ftp.osuosl.org/pub/blfs/conglomeration/qt5/qt-everywhere-src-5.12.1.tar.xz
   tar xvfk qt-everywhere-src-5.12.1.tar.xz
 fi
 

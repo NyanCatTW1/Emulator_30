@@ -16,7 +16,8 @@ SUBDIRS = \
 					android-emulator-build/common/x264/linux-x86_64 \
 					android-emulator-build/common/ffmpeg/linux-x86_64 \
 					android-emulator-build/qt/linux-x86_64 \
-					android-emulator-build/common/qtwebengine-deps/linux-x86_64
+					android-emulator-build/common/qtwebengine-deps/linux-x86_64 \
+					depot_tools
 
 all: \
 	cmake/linux-x86/bin/cmake \
@@ -40,7 +41,8 @@ all: \
 	android-emulator-build/common/ffmpeg/linux-x86_64/lib/libavcodec.a \
 	android-emulator-build/qt/linux-x86_64/lib/libQt5WebEngineWidgetsAndroidEmu.so \
 	android-emulator-build/qt/linux-x86_64/include.system/QtCore/qconfig.h \
-	qtwebengine-deps
+	qtwebengine-deps \
+	depot_tools/gclient
 
 clean:
 	for dir in $(SUBDIRS); do \
@@ -121,3 +123,6 @@ patchelf/bin/patchelf:
 
 qtwebengine-deps: clang/host/linux-x86/clang-r399163b/bin/clang clang/host/linux-x86/clang-r399163b/lib64/libc++.so
 	@$(MAKE) -C android-emulator-build/common/qtwebengine-deps/linux-x86_64
+
+depot_tools/gclient:
+	@$(MAKE) -C depot_tools

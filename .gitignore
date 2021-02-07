@@ -26,3 +26,9 @@ emu-30/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/*
 # Qt artifact
 emu-30/prebuilts/android-emulator-build/qt/linux-x86_64/*
 !emu-30/prebuilts/android-emulator-build/qt/linux-x86_64/Makefile
+
+# depot_tools artifact
+emu-30/prebuilts/depot_tools/*
+!emu-30/prebuilts/depot_tools/Makefile
+!emu-30/prebuilts/depot_tools/ninja-linux32
+!emu-30/prebuilts/depot_tools/ninja-linux64

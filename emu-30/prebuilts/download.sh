@@ -62,9 +62,7 @@ if [ ! -d virglrenderer ]; then
   cp -av ../../wd/external/virglrenderer .
   pushd virglrenderer
     ./autogen.sh
-    if patch -p1 -N --dry-run --silent < ../../../patches/virglrenderer-legacy-libdrm-support.patch 2>/dev/null; then \
-      patch -p1 -N < ../../../patches/virglrenderer-legacy-libdrm-support.patch; \
-    fi
+    patch -p1 -i ../../../patches/virglrenderer-legacy-libdrm-support.patch
   popd
 fi
 
@@ -134,6 +132,25 @@ fi
 if [ ! -d patchelf-0.12.20200827.8d3a16e ]; then
   wget -c https://github.com/NixOS/patchelf/releases/download/0.12/patchelf-0.12.tar.bz2
   tar xvfk patchelf-0.12.tar.bz2
+fi
+
+if [ ! -d angle ]; then
+  git clone --depth 1 https://chromium.googlesource.com/angle/angle
+  pushd angle
+    git fetch origin 7d712e7d05418533fd90652ad089b3cacfcfca72
+    git checkout 7d712e7d05418533fd90652ad089b3cacfcfca72
+    patch -p1 -i ../../../patches/angle/0001-Current-emulator-specific-ANGLE-modifications.patch
+    patch -p1 -i ../../../patches/angle/0002-Add-RGB888-support.patch
+    patch -p1 -i ../../../patches/angle/0003-Update-ANGLE-for-latest-emulator-sysimg-changes.patch
+  popd
+fi
+
+if [ ! -d depot_tools ]; then
+  git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools
+  pushd depot_tools
+    # Get rid of the evil ninjas
+    rm -v ninja{.exe,-mac,-linux32,-linux64}
+  popd
 fi
 
 popd

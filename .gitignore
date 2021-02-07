@@ -19,6 +19,10 @@ ninja
 # Clang artifact
 clang-r399163b/
 
-# Special treats for x86_64-linux-glibc2.17-4.8
+# x86_64-linux-glibc2.17-4.8 artifact
 emu-30/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/*
 !emu-30/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8/Makefile
+
+# Qt artifact
+emu-30/prebuilts/android-emulator-build/qt/linux-x86_64/*
+!emu-30/prebuilts/android-emulator-build/qt/linux-x86_64/Makefile

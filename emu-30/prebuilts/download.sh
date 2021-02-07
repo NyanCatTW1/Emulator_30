@@ -136,4 +136,9 @@ if [ ! -d patchelf-0.12.20200827.8d3a16e ]; then
   tar xvfk patchelf-0.12.tar.bz2
 fi
 
+if [ ! -d gperf-3.1 ]; then
+  wget -c http://ftp.gnu.org/pub/gnu/gperf/gperf-3.1.tar.gz
+  tar xvfk gperf-3.1.tar.gz
+fi
+
 popd

@@ -1,14 +1,14 @@
 .PHONY: all clean distclean
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-lib/libQt5CoreAndroidEmu.so:
+lib/libQt5WebEngineWidgetsAndroidEmu.so:
 	mkdir -p ../../../wd/qt-build
 	cd ../../../wd/qt-build && \
-	export CFLAGS="-fPIC" \
-	export CXXFLAGS="-fPIC" \
-	export LD_LIBRARY_PATH="/home/android/wd/prebuilts/clang/host/linux-x86/clang-r399163b/lib" \
+	export CFLAGS="-fPIC"; \
+	export CXXFLAGS="-fPIC"; \
+	export LD_LIBRARY_PATH="/home/android/wd/prebuilts/clang/host/linux-x86/clang-r399163b/lib"; \
 	export PKG_CONFIG_PATH="/home/android/wd/prebuilts/android-emulator-build/common/qtwebengine-deps/linux-x86_64/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig"; \
-	export PATH="/home/android/wd/prebuilts/clang/host/linux-x86/clang-r399163b/bin:/home/android/wd/prebuilts/android-emulator-build/common/qtwebengine-deps/linux-x86_64/bin:/home/android/wd/prebuilts/ninja/linux-x86:$$PATH"; \
+	export PATH="/home/android/wd/prebuilts/clang/host/linux-x86/clang-r399163b/bin:/home/android/wd/prebuilts/gcc-5/bin:/home/android/wd/prebuilts/android-emulator-build/common/qtwebengine-deps/linux-x86_64/bin:$$PATH"; \
 	../../tarballs/qt-everywhere-src-5.12.1/configure \
 		-prefix ${ROOT_DIR} \
 		-opensource \
@@ -41,4 +41,4 @@ clean:
 distclean: clean
 	rm -rf ../../../wd/qt-build
 
-all: lib/libQt5CoreAndroidEmu.so include.system/QtCore/qconfig.h
+all: lib/libQt5WebEngineWidgetsAndroidEmu.so include.system/QtCore/qconfig.h

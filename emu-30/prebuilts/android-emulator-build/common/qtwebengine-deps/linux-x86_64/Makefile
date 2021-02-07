@@ -5,7 +5,6 @@ qtwebengine-deps: \
 	lib/libxkbcommon.so \
 	lib/libxcb.so \
 	share/xcb/damage.xml \
-	bin/gperf \
 	bin/patchelf
 
 lib/libxkbcommon.so: lib/libxcb.so
@@ -33,13 +32,6 @@ bin/patchelf:
 	mkdir -p ../../../../wd/qtwebengine-deps/patchelf-build
 	cd ../../../../wd/qtwebengine-deps/patchelf-build && \
   ../../../tarballs/patchelf-0.12.20200827.8d3a16e/configure --prefix=${ROOT_DIR} && \
-  make -j6 && \
-  make install
-
-bin/gperf:
-	mkdir -p ../../../../wd/qtwebengine-deps/gperf-build
-	cd ../../../../wd/qtwebengine-deps/gperf-build && \
-  ../../../tarballs/gperf-3.1/configure --prefix=${ROOT_DIR} && \
   make -j6 && \
   make install
 

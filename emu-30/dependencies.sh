@@ -39,4 +39,4 @@ apt-get install -y libpthread-stubs0-dev libexpat1-dev libdrm-dev
 # Libvpx deps
 apt-get install -y nasm yasm
 # Qt deps
-apt-get install -y libgles2-mesa-dev
+apt-get install -y libgles2-mesa-dev gperf libnss3-dev libdbus-1-dev libfontconfig1-dev libxcomposite-dev libxcursor-dev libxi-dev libxrandr-dev libxtst-dev

@@ -15,6 +15,7 @@ SUBDIRS = \
 					android-emulator-build/common/libvpx/linux-x86_64 \
 					android-emulator-build/common/x264/linux-x86_64 \
 					android-emulator-build/common/ffmpeg/linux-x86_64 \
+					android-emulator-build/common/ANGLE/linux-x86_64 \
 					android-emulator-build/qt/linux-x86_64 \
 					android-emulator-build/common/qtwebengine-deps/linux-x86_64 \
 					depot_tools
@@ -39,6 +40,7 @@ all: \
 	android-emulator-build/common/libvpx/linux-x86_64/lib/libvpx.a \
 	android-emulator-build/common/x264/linux-x86_64/lib/libx264.a \
 	android-emulator-build/common/ffmpeg/linux-x86_64/lib/libavcodec.a \
+	android-emulator-build/common/ANGLE/linux-x86_64/lib/libangle_st.so \
 	android-emulator-build/qt/linux-x86_64/lib/libQt5WebEngineWidgetsAndroidEmu.so \
 	android-emulator-build/qt/linux-x86_64/include.system/QtCore/qconfig.h \
 	qtwebengine-deps \
@@ -111,6 +113,9 @@ android-emulator-build/common/x264/linux-x86_64/lib/libx264.a:
 
 android-emulator-build/common/ffmpeg/linux-x86_64/lib/libavcodec.a:
 	@$(MAKE) -C android-emulator-build/common/ffmpeg/linux-x86_64
+
+android-emulator-build/common/ANGLE/linux-x86_64/lib/libangle_st.so: depot_tools/gclient
+	@$(MAKE) -C android-emulator-build/common/ANGLE/linux-x86_64
 
 android-emulator-build/qt/linux-x86_64/lib/libQt5WebEngineWidgetsAndroidEmu.so: qtwebengine-deps
 	@$(MAKE) -C android-emulator-build/qt/linux-x86_64 lib/libQt5WebEngineWidgetsAndroidEmu.so

@@ -10,10 +10,10 @@ all:
 
 	make -C ../downloader/
 	cp -a download.sh wd/
-	docker run -v "$$(pwd)/wd:/home/builder/wd" android-rebuilds:downloader /home/builder/wd/download.sh
+	docker run -it -v "$$(pwd)/wd:/home/builder/wd" android-rebuilds:downloader /home/builder/wd/download.sh
 	
 	prebuilts/download.sh
-	docker run -v "$$(pwd)/prebuilts:/home/builder/wd/prebuilts" android-rebuilds:emu-$(VERSION) /home/builder/wd/prebuilts/build.sh
+	docker run -it -v "$$(pwd)/prebuilts:/home/builder/wd/prebuilts" android-rebuilds:emu-$(VERSION) /home/builder/wd/prebuilts/build.sh
 
 	if patch -p0 -N --dry-run --silent < patches/clang-libPath-fix.patch 2>/dev/null; then \
 		patch -p0 -N < patches/clang-libPath-fix.patch; \
